@@ -1,0 +1,263 @@
+Reading pref.tclError: tag "Error" isn't defined in text widget
+
+//  Questa Sim-64
+//  Version 2021.4 linux_x86_64 Oct 13 2021
+//
+//  Copyright 1991-2021 Mentor Graphics Corporation
+//  All Rights Reserved.
+//
+//  QuestaSim and its associated documentation contain trade
+//  secrets and commercial or financial information that are the property of
+//  Mentor Graphics Corporation and are privileged, confidential,
+//  and exempt from disclosure under the Freedom of Information Act,
+//  5 U.S.C. Section 552. Furthermore, this information
+//  is prohibited from disclosure under the Trade Secrets Act,
+//  18 U.S.C. Section 1905.
+//
+vsim -gui -vopt -voptargs="+acc" -t ps -do "waves/top_level.do" -do "set PrefSource(OpenOnFinish) 0 ; set PrefMain(LinePrefix) "" ; set PrefMain(colorizeTranscript) 1" -onfinish stop -coverage tb_top_level 
+Start time: 13:43:43 on May 01,2025
+** Note: (vsim-3812) Design is being optimized...
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(780): (vopt-2685) [TFMPC] - Too few port connections for 'hrcu'.  Expected 14, found 13.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(780): (vopt-2718) [TFMPC] - Missing connection for port 'write_tx'.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8164): (vopt-2685) [TFMPC] - Too few port connections for 'bit_shift'.  Expected 9, found 8.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8164): (vopt-2718) [TFMPC] - Missing connection for port 'serial_out'.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8174): (vopt-2685) [TFMPC] - Too few port connections for 'timer'.  Expected 10, found 7.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8174): (vopt-2718) [TFMPC] - Missing connection for port 'bit_count'.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8174): (vopt-2718) [TFMPC] - Missing connection for port 'pd_count'.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(8174): (vopt-2718) [TFMPC] - Missing connection for port 'bit_done'.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(7624): (vopt-2685) [TFMPC] - Too few port connections for 'pts_register'.  Expected 8, found 7.
+** Warning: src/team5_ece337_top_level_syn_0/top_level.v(7624): (vopt-2718) [TFMPC] - Missing connection for port 'parallel_out'.
+** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
+Loading sv_std.std
+Loading work.tb_top_level(fast)
+Loading work.ahb_model_updated(fast)
+Loading work.top_level(fast)
+Loading work.ahb_subordinate_lite(fast)
+Loading work.DFFSR(fast)
+Loading work.DFFSR_CORE(fast)
+Loading work.hready_controller(fast)
+Loading work.INVX1(fast)
+Loading work.NAND2X1(fast)
+Loading work.MUX2X1(fast)
+Loading work.OR2X1(fast)
+Loading work.OAI21X1(fast)
+Loading work.NAND3X1(fast)
+Loading work.AOI21X1(fast)
+Loading work.AOI22X1(fast)
+Loading work.NOR2X1(fast)
+Loading work.XOR2X1(fast)
+Loading work.AND2X1(fast)
+Loading work.OAI22X1(fast)
+Loading work.INVX2(fast)
+Loading work.AND2X2(fast)
+Loading work.BUFX2(fast)
+Loading work.BUFX4(fast)
+Loading work.BUFX4(fast__1)
+Loading work.XNOR2X1(fast)
+Loading work.data_buffer(fast)
+Loading work.data_buffer_DW01_inc_2_DW01_inc_13(fast)
+Loading work.HAX1(fast)
+Loading work.INVX4(fast)
+Loading work.INVX8(fast)
+Loading work.BUFX2(fast__1)
+Loading work.usb_tx(fast)
+Loading work.txcu(fast)
+Loading work.NOR3X1(fast)
+Loading work.tx_timer(fast)
+Loading work.bit_pd_counter(fast)
+Loading work.flex_counter_SIZE4(fast)
+Loading work.flex_sr_SIZE8_MSB_FIRST0(fast)
+Loading work.encoder(fast)
+Loading work.usb_rx(fast)
+Loading work.decoder(fast)
+Loading work.flex_sr_rx_MSB_FIRST0(fast)
+Loading work.rx_cu(fast)
+Loading work.rx_timer(fast)
+Loading work.bit_pd_counter_rx(fast)
+Loading work.flex_counter_rx(fast)
+do waves/top_level.do
+** UI-Msg (Warning): (vish-4014) No objects found matching '/tb_top_level/DUT/buffer/curr_reg'.
+Executing ONERROR command at macro ./waves/top_level.do line 36
+set PrefSource(OpenOnFinish) 0 
+0
+ set PrefMain(LinePrefix) "" 
+ set PrefMain(colorizeTranscript) 1
+1
+do /home/ecegridfs/a/337mg158/cdl_repo/337cdl/toplevels/waves/top_level_transmit.do
+run -all
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[0] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[1] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[2] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[3] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[4] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[5] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[6] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:3216220 ps, :3216430 ps, 230 ps );
+   Time: 3216430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[7] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[0] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[1] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[2] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[3] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[4] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[5] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[6] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:6376220 ps, :6376430 ps, 230 ps );
+   Time: 6376430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[7] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[0] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[1] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[2] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[3] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[4] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[5] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[6] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:8616220 ps, :8616430 ps, 230 ps );
+   Time: 8616430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[7] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[0] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[1] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[2] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[3] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[4] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[5] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[6] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+** Error: $width( negedge R:53116220 ps, :53116430 ps, 230 ps );
+   Time: 53116430 ps  Iteration: 0  Process: /tb_top_level/DUT/rx/\byte_reg_reg[7] /CELL_MODULE/#Width# File: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v Line: 644
+Test Case: transmit ACK
+Checking SYNC byte >>
+111606 ns SYNC is wrong expected: 00000001 got: 00000000
+Checking PID >>
+Correct PID, got: 11010010
+112426 ns EOP detected
+Test Case: transmit NAK
+Checking SYNC byte >>
+Correct PID, got: 00000001
+Checking PID >>
+Correct PID, got: 01011010
+114092 ns EOP detected
+Test Case: transmit STALL
+Checking SYNC byte >>
+Correct PID, got: 00000001
+Checking PID >>
+Correct PID, got: 00011110
+115676 ns EOP detected
+Test Case: transmit DATA0
+Checking SYNC byte >>
+Correct PID, got: 00000001
+Checking PID >>
+Correct PID, got: 11000011
+117926 ns byte is wrong, expected: aa got: 10
+118593 ns byte is wrong, expected: 10 got: 11
+119260 ns byte is wrong, expected: 11 got: 12
+119927 ns byte is wrong, expected: 12 got: 13
+120593 ns byte is wrong, expected: 13 got: 14
+121260 ns: Correct byte, got: 55
+121927 ns: Correct byte, got: 55
+122093 ns EOP detected
+Test Case: transmit DATA1
+Checking SYNC byte >>
+Correct PID, got: 00000001
+Checking PID >>
+Correct PID, got: 01001011
+125594 ns byte is wrong, expected: 14 got: 02
+126260 ns byte is wrong, expected: 02 got: 03
+126927 ns byte is wrong, expected: 03 got: 04
+127594 ns byte is wrong, expected: 04 got: 05
+128261 ns byte is wrong, expected: 05 got: 06
+128927 ns byte is wrong, expected: 06 got: 07
+129594 ns byte is wrong, expected: 07 got: 08
+130261 ns byte is wrong, expected: 08 got: 09
+130927 ns byte is wrong, expected: 09 got: 0a
+131594 ns byte is wrong, expected: 0a got: 0b
+132261 ns byte is wrong, expected: 0b got: 0c
+132928 ns byte is wrong, expected: 0c got: 0d
+133594 ns byte is wrong, expected: 0d got: 0e
+134261 ns byte is wrong, expected: 0e got: 0f
+134928 ns byte is wrong, expected: 0f got: 10
+135594 ns byte is wrong, expected: 10 got: 11
+136261 ns byte is wrong, expected: 11 got: 12
+136928 ns byte is wrong, expected: 12 got: 13
+137595 ns byte is wrong, expected: 13 got: 14
+138261 ns byte is wrong, expected: 14 got: 15
+138928 ns byte is wrong, expected: 15 got: 16
+139595 ns byte is wrong, expected: 16 got: 17
+140262 ns byte is wrong, expected: 17 got: 18
+140928 ns byte is wrong, expected: 18 got: 19
+141595 ns byte is wrong, expected: 19 got: 1a
+142262 ns byte is wrong, expected: 1a got: 1b
+142928 ns byte is wrong, expected: 1b got: 1c
+143595 ns byte is wrong, expected: 1c got: 1d
+144262 ns byte is wrong, expected: 1d got: 1e
+144929 ns byte is wrong, expected: 1e got: 1f
+145595 ns byte is wrong, expected: 1f got: 20
+146262 ns byte is wrong, expected: 20 got: 21
+146929 ns byte is wrong, expected: 21 got: 22
+147595 ns byte is wrong, expected: 22 got: 23
+148262 ns byte is wrong, expected: 23 got: 24
+148929 ns byte is wrong, expected: 24 got: 25
+149596 ns byte is wrong, expected: 25 got: 26
+150262 ns byte is wrong, expected: 26 got: 27
+150929 ns byte is wrong, expected: 27 got: 28
+151596 ns byte is wrong, expected: 28 got: 29
+152262 ns byte is wrong, expected: 29 got: 2a
+152929 ns byte is wrong, expected: 2a got: 2b
+153596 ns byte is wrong, expected: 2b got: 2c
+154263 ns byte is wrong, expected: 2c got: 2d
+154929 ns byte is wrong, expected: 2d got: 2e
+155596 ns byte is wrong, expected: 2e got: 2f
+156263 ns byte is wrong, expected: 2f got: 30
+156930 ns byte is wrong, expected: 30 got: 31
+157596 ns byte is wrong, expected: 31 got: 32
+158263 ns byte is wrong, expected: 32 got: 33
+158930 ns byte is wrong, expected: 33 got: 34
+159596 ns byte is wrong, expected: 34 got: 35
+160263 ns byte is wrong, expected: 35 got: 36
+160930 ns byte is wrong, expected: 36 got: 37
+161597 ns byte is wrong, expected: 37 got: 38
+162263 ns byte is wrong, expected: 38 got: 39
+162930 ns byte is wrong, expected: 39 got: 3a
+163597 ns byte is wrong, expected: 3a got: 3b
+164263 ns byte is wrong, expected: 3b got: 3c
+164930 ns byte is wrong, expected: 3c got: 3d
+165597 ns byte is wrong, expected: 3d got: 3e
+166264 ns byte is wrong, expected: 3e got: 3f
+166930 ns byte is wrong, expected: 3f got: 40
+167597 ns byte is wrong, expected: 40 got: 41
+168264 ns: Correct byte, got: 55
+168930 ns: Correct byte, got: 55
+169097 ns EOP detected
+** Error: Incorrect 'hrdata' response from subordinate device during transaction (transaction 160).
+   Expected 2, got 0.
+   Time: 169420 ns  Scope: tb_top_level.BFM.VERIFY_OUTPUT File: src/ece337_course-lib_ahb_model_updated_1.0.0/source/ahb_model_updated.sv Line: 309
+** Note: $finish    : src/team5_ece337_top_level_1.0.0/testbench/tb_top_level.sv(1021)
+   Time: 169620 ns  Iteration: 1  Instance: /tb_top_level
+Break in Module tb_top_level at src/team5_ece337_top_level_1.0.0/testbench/tb_top_level.sv line 1021
+A time value could not be extracted from the current line
+End time: 13:45:07 on May 01,2025, Elapsed time: 0:01:24
+Errors: 33, Warnings: 10

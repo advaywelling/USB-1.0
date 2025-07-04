@@ -1,0 +1,15 @@
+CAPI=2:
+name: "team5:ece337:usb_rx_syn"
+
+filesets:
+    netlist:
+        files:
+            - "usb_rx.v"
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets:
+            - netlist
+        toplevel: usb_rx
+

@@ -1,0 +1,15 @@
+CAPI=2:
+name: "team5:ece337:usb_tx_syn"
+
+filesets:
+    netlist:
+        files:
+            - "usb_tx.v"
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets:
+            - netlist
+        toplevel: usb_tx
+

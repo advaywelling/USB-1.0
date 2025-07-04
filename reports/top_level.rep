@@ -1,0 +1,124 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top_level
+Version: W-2024.09-SP4
+Date   : Thu May  1 13:38:17 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: ahb/hrcu/hready_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: hready (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  ahb/hrcu/hready_reg/CLK (DFFSR)          0.00       0.00 r
+  ahb/hrcu/hready_reg/Q (DFFSR)            0.86       0.86 f
+  ahb/hrcu/hready (hready_controller)      0.00       0.86 f
+  ahb/hready (ahb_subordinate_lite)        0.00       0.86 f
+  hready (out)                             0.00       0.86 f
+  data arrival time                                   0.86
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : top_level
+Version: W-2024.09-SP4
+Date   : Thu May  1 13:38:17 2025
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+Number of ports:                          569
+Number of nets:                          7500
+Number of cells:                         7002
+Number of combinational cells:           5477
+Number of sequential cells:               750
+Number of macros/black boxes:               0
+Number of buf/inv:                        781
+Number of references:                       4
+
+Combinational area:            1293624.000000
+Buf/Inv area:                   127944.000000
+Noncombinational area:         1188000.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               2481624.000000
+Total area:                 undefined
+1
+Loading db file '/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : top_level
+Version: W-2024.09-SP4
+Date   : Thu May  1 13:38:18 2025
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+top_level                               122.149  198.800  754.059  320.950 100.0
+  rx (usb_rx)                             1.084    5.625   44.251    6.709   2.1
+    timer (rx_timer)                      0.335    1.733   13.266    2.068   0.6
+      count (flex_counter_rx)             0.000    0.512    6.154    0.512   0.2
+      pd (bit_pd_counter_rx)              0.335    1.222    7.112    1.556   0.5
+    rcu (rx_cu)                        1.88e-03    1.415   17.282    1.416   0.4
+    bit_shift (flex_sr_rx_MSB_FIRST0)     0.000    0.819    6.149    0.819   0.3
+    nrzi (decoder)                        0.290    0.751    3.103    1.041   0.3
+  transmitter (usb_tx)                 6.34e-03    3.118   33.997    3.125   1.0
+    encoder_module (encoder)           8.74e-04    0.233    2.087    0.234   0.1
+    pts_register (flex_sr_SIZE8_MSB_FIRST0)
+                                       5.46e-03    1.043    5.953    1.048   0.3
+    timer (tx_timer)                      0.000    1.228   12.463    1.228   0.4
+      bit_counter (flex_counter_SIZE4)    0.000    0.512    5.636    0.512   0.2
+      bit_pd (bit_pd_counter)             0.000    0.717    6.615    0.717   0.2
+    fsm_ctrl (txcu)                       0.000    0.614   13.494    0.614   0.2
+  buffer (data_buffer)                   42.899   77.103  433.890  120.003  37.4
+    add_75 (data_buffer_DW01_inc_2_DW01_inc_13)
+                                          0.000    0.000    1.541 1.54e-06   0.0
+  ahb (ahb_subordinate_lite)             78.160  112.954  241.924  191.114  59.5
+    hrcu (hready_controller)              2.943    4.902   17.630    7.845   2.4
+1

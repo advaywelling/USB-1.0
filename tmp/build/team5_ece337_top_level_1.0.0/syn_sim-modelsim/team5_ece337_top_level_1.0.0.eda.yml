@@ -1,0 +1,56 @@
+version: 0.2.1
+dependencies:
+  ece337:course-lib:ahb_model_updated:1.0.0: []
+  ece337:tech:AMI_05_LIB:0: []
+  team5:ece337:top_level_syn:0: []
+  team5:ece337:top_level:1.0.0:
+  - ece337:course-lib:ahb_model_updated:1.0.0
+  - ece337:tech:AMI_05_LIB:0
+  - team5:ece337:top_level_syn:0
+files:
+- file_type: systemVerilogSource
+  name: src/ece337_course-lib_ahb_model_updated_1.0.0/source/ahb_model_updated.sv
+  core: ece337:course-lib:ahb_model_updated:1.0.0
+- file_type: verilogSource
+  name: src/ece337_tech_AMI_05_LIB_0/osu05_stdcells.v
+  core: ece337:tech:AMI_05_LIB:0
+- file_type: systemVerilogSource
+  name: src/team5_ece337_top_level_syn_0/top_level.v
+  core: team5:ece337:top_level_syn:0
+- file_type: systemVerilogSource
+  name: src/team5_ece337_top_level_1.0.0/testbench/tb_top_level.sv
+  core: team5:ece337:top_level:1.0.0
+- file_type: user
+  name: src/team5_ece337_top_level_1.0.0/waves/top_level.do
+  core: team5:ece337:top_level:1.0.0
+- file_type: user
+  name: src/team5_ece337_top_level_1.0.0/waves/top_level.gtkw
+  core: team5:ece337:top_level:1.0.0
+- file_type: systemVerilogSource
+  name: src/team5_ece337_top_level_1.0.0/testbench/tb_top_level.sv
+  core: team5:ece337:top_level:1.0.0
+- file_type: user
+  name: src/team5_ece337_top_level_1.0.0/waves/top_level.do
+  core: team5:ece337:top_level:1.0.0
+- file_type: user
+  name: src/team5_ece337_top_level_1.0.0/waves/top_level.gtkw
+  core: team5:ece337:top_level:1.0.0
+hooks: {}
+name: team5_ece337_top_level_1.0.0
+parameters: {}
+tool_options:
+  modelsim:
+    vsim_options:
+    - -vopt
+    - -voptargs='+acc'
+    - -t ps
+    - -do waves/top_level.do
+    - -onfinish stop
+    - -do "set PrefSource(OpenOnFinish) 0 ; set PrefMain(LinePrefix) \"\" ; set PrefMain(colorizeTranscript)
+      1"
+    - -coverage
+    vlog_options:
+    - +cover
+toplevel: tb_top_level
+vpi: []
+flow_options: {}

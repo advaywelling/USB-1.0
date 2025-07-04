@@ -1,0 +1,15 @@
+CAPI=2:
+name: "team5:ece337:ahb_db_tx_syn"
+
+filesets:
+    netlist:
+        files:
+            - "ahb_db_tx.v"
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets:
+            - netlist
+        toplevel: ahb_db_tx
+

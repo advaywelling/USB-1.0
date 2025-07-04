@@ -1,0 +1,102 @@
+CAPI=2:
+name: "team5:ece337:usb_tx_stuff:1.0.0"
+description: ""
+
+filesets:
+    rtl:
+        files:
+            - "source/usb_tx_stuff.sv"
+        file_type: systemVerilogSource
+        # depend:
+        #     - "fusesoc:core:name"
+        depend:
+            - "team5:ece337:txcu:1.0.0"
+            - "team5:ece337:tx_timer:1.0.0"
+            - "team5:ece337:encoder:1.0.0"
+            - "team5:ece337:bit_pd_counter:1.0.0"
+            - "team5:ece337:flex_sr:1.0.0"
+            - "team5:ece337:bit_stuffer:1.0.0"
+
+    synth:
+        depend:
+            - "ece337:tech:AMI_05_LIB"
+            - "team5:ece337:usb_tx_stuff_syn"
+
+    tb:
+        files:
+            - "testbench/tb_usb_tx_stuff.sv"
+            - "waves/usb_tx_stuff.do": { file_type: user }
+            - "waves/usb_tx_stuff.gtkw": { file_type: user }
+            # - "data/file.txt": { file_type: user }
+        file_type: systemVerilogSource
+
+    synfiles:
+        depend:
+            - "team5:ece337:synfiles"
+
+targets:
+    default: &default
+        filesets:
+            - rtl
+        toplevel: usb_tx_stuff
+
+    sim: &sim
+        <<: *default
+        default_tool: verilator
+        filesets_append:
+            - tb
+        toplevel: tb_usb_tx_stuff
+        tools:
+            modelsim:
+                vsim_options:
+                    - -vopt
+                    - -voptargs='+acc'
+                    - -t ps
+                    - -do waves/usb_tx_stuff.do
+                    - -onfinish stop
+                    - -do "set PrefSource(OpenOnFinish) 0 ; set PrefMain(LinePrefix) \"\" ; set PrefMain(colorizeTranscript) 1"
+                    - -coverage
+                vlog_options:
+                    - +cover
+            verilator:
+                verilator_options:
+                    - --cc
+                    - --trace
+                    - --main
+                    - --timing
+                    - --coverage
+                make_options:
+                    - -j
+
+    lint:
+        <<: *default
+        default_tool: verilator
+        filesets_append:
+            - tb
+        tools:
+            verilator:
+                mode: lint-only
+                verilator_options:
+                    - --timing
+                    - -Wall
+
+    syn:
+        <<: *default
+        filesets_append:
+            - synfiles
+        default_tool: design_compiler
+        toplevel: usb_tx_stuff
+        tools:
+            design_compiler:
+                script_dir: "src/team5_ece337_synfiles_0"
+                dc_script: "synth.tcl"
+                report_dir: "reports"
+                target_library: "/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db"
+                libs: "/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db dw_foundation.sldb"
+
+    syn_sim:
+        <<: *sim
+        filesets:
+            - synth
+            - tb
+

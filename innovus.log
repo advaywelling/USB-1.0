@@ -1,0 +1,15 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.17-s075_1, built Wed Mar 15 11:17:40 PDT 2023
+Options:	
+Date:		Thu Apr 10 13:41:00 2025
+Host:		ececomp1.ecn.purdue.edu (x86_64 w/Linux 5.15.0-306.177.4.el8uek.x86_64) (32cores*128cpus*AMD EPYC 7513 32-Core Processor 512KB)
+OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+
+License:
+		[13:41:00.431434] Configured Lic search path (21.01-s002): 1720@marina.ecn.purdue.edu:1718@marina.ecn.purdue.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.

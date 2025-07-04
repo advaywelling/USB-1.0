@@ -1,0 +1,114 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ahb_db
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 15:02:22 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: ahb_sub/mem_reg[12][7]
+              (rising edge-triggered flip-flop)
+  Endpoint: tx_packet[0]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  ahb_sub/mem_reg[12][7]/CLK (DFFSR)                      0.00       0.00 r
+  ahb_sub/mem_reg[12][7]/Q (DFFSR)                        0.54       0.54 r
+  ahb_sub/U18/Y (BUFX2)                                   0.51       1.05 r
+  ahb_sub/U1914/Y (NOR2X1)                                0.27       1.32 f
+  ahb_sub/U1912/Y (NAND3X1)                               0.24       1.56 r
+  ahb_sub/U1911/Y (AOI21X1)                               0.21       1.77 f
+  ahb_sub/U1910/Y (NAND2X1)                               0.14       1.91 r
+  ahb_sub/tx_packet[0] (ahb_subordinate_lite)             0.00       1.91 r
+  tx_packet[0] (out)                                      0.00       1.91 r
+  data arrival time                                                  1.91
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : ahb_db
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 15:02:22 2025
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+Number of ports:                          318
+Number of nets:                          6480
+Number of cells:                         6215
+Number of combinational cells:           4855
+Number of sequential cells:               678
+Number of macros/black boxes:               0
+Number of buf/inv:                        615
+Number of references:                       2
+
+Combinational area:            1144638.000000
+Buf/Inv area:                   104040.000000
+Noncombinational area:         1073952.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               2218590.000000
+Total area:                 undefined
+1
+Loading db file '/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ahb_db
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 15:02:22 2025
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ahb_db                                  146.862  203.332  675.798  350.194 100.0
+  db (data_buffer)                       66.740   86.961  433.890  153.701  43.9
+    add_75 (data_buffer_DW01_inc_2_DW01_inc_5)
+                                       3.68e-03 8.55e-03    1.541 1.22e-02   0.0
+  ahb_sub (ahb_subordinate_lite)         80.123  116.370  241.911  196.494  56.1
+    hrcu (hready_controller)              2.926    4.877   17.630    7.803   2.2
+1

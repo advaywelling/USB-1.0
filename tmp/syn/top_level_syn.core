@@ -1,0 +1,15 @@
+CAPI=2:
+name: "team5:ece337:top_level_syn"
+
+filesets:
+    netlist:
+        files:
+            - "top_level.v"
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets:
+            - netlist
+        toplevel: top_level
+

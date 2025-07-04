@@ -1,0 +1,16 @@
+[04/10 13:41:00      0s] 
+[04/10 13:41:00      0s] Cadence Innovus(TM) Implementation System.
+[04/10 13:41:00      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/10 13:41:00      0s] 
+[04/10 13:41:00      0s] Version:	v21.17-s075_1, built Wed Mar 15 11:17:40 PDT 2023
+[04/10 13:41:00      0s] Options:	
+[04/10 13:41:00      0s] Date:		Thu Apr 10 13:41:00 2025
+[04/10 13:41:00      0s] Host:		ececomp1.ecn.purdue.edu (x86_64 w/Linux 5.15.0-306.177.4.el8uek.x86_64) (32cores*128cpus*AMD EPYC 7513 32-Core Processor 512KB)
+[04/10 13:41:00      0s] OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+[04/10 13:41:00      0s] 
+[04/10 13:41:00      0s] License:
+[04/10 13:41:00      0s] 		[13:41:00.431434] Configured Lic search path (21.01-s002): 1720@marina.ecn.purdue.edu:1718@marina.ecn.purdue.edu
+
+[04/10 13:41:00      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/10 13:41:00      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/10 13:41:12     11s] Reset Parastics called with the command setExtractRCMode -reset

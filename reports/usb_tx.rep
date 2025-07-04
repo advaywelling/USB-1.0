@@ -1,0 +1,115 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : usb_tx
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 23:45:28 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: fsm_ctrl/state_reg[2]
+              (rising edge-triggered flip-flop)
+  Endpoint: get_tx_packet_data
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  fsm_ctrl/state_reg[2]/CLK (DFFSR)        0.00       0.00 r
+  fsm_ctrl/state_reg[2]/Q (DFFSR)          0.76       0.76 f
+  fsm_ctrl/U142/Y (INVX1)                  0.29       1.05 r
+  fsm_ctrl/U141/Y (NOR2X1)                 0.37       1.41 f
+  fsm_ctrl/U138/Y (NAND3X1)                0.32       1.74 r
+  fsm_ctrl/U137/Y (INVX1)                  0.15       1.88 f
+  fsm_ctrl/get_tx_packet_data (txcu)       0.00       1.88 f
+  get_tx_packet_data (out)                 0.00       1.88 f
+  data arrival time                                   1.88
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : usb_tx
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 23:45:28 2025
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+Number of ports:                          146
+Number of nets:                           455
+Number of cells:                          329
+Number of combinational cells:            264
+Number of sequential cells:                27
+Number of macros/black boxes:               0
+Number of buf/inv:                         69
+Number of references:                       4
+
+Combinational area:              62730.000000
+Buf/Inv area:                     9936.000000
+Noncombinational area:           42768.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                105498.000000
+Total area:                 undefined
+1
+Loading db file '/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : usb_tx
+Version: W-2024.09-SP4
+Date   : Tue Apr 29 23:45:29 2025
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+usb_tx                                    2.139    5.662   31.463    7.800 100.0
+  encoder_module (encoder)             8.83e-03    0.256    1.873    0.265   3.4
+  pts_register (flex_sr_SIZE8_MSB_FIRST0)
+                                          0.288    1.695    5.953    1.983  25.4
+  timer (tx_timer)                        0.273    1.505   12.463    1.778  22.8
+    bit_counter (flex_counter_SIZE4)   5.54e-02    0.543    5.636    0.599   7.7
+    bit_pd (bit_pd_counter)               0.216    0.958    6.615    1.174  15.1
+  fsm_ctrl (txcu)                         1.569    2.205   11.173    3.775  48.4
+1

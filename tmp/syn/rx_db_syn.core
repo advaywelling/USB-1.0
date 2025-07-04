@@ -1,0 +1,15 @@
+CAPI=2:
+name: "team5:ece337:rx_db_syn"
+
+filesets:
+    netlist:
+        files:
+            - "rx_db.v"
+        file_type: systemVerilogSource
+
+targets:
+    default:
+        filesets:
+            - netlist
+        toplevel: rx_db
+

@@ -1,0 +1,120 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rx_db
+Version: W-2024.09-SP4
+Date   : Thu May  1 07:04:47 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: rx/rcu/state_reg[3]
+              (rising edge-triggered flip-flop)
+  Endpoint: rx_transfer_active
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  rx/rcu/state_reg[3]/CLK (DFFSR)          0.00       0.00 r
+  rx/rcu/state_reg[3]/Q (DFFSR)            1.00       1.00 f
+  rx/rcu/U174/Y (NOR2X1)                   0.44       1.44 r
+  rx/rcu/U156/Y (INVX1)                    0.34       1.78 f
+  rx/rcu/U155/Y (NOR2X1)                   0.24       2.02 r
+  rx/rcu/U77/Y (NOR2X1)                    0.24       2.27 f
+  rx/rcu/U24/Y (NAND3X1)                   0.12       2.38 r
+  rx/rcu/rx_transfer_active (rx_cu)        0.00       2.38 r
+  rx/rx_transfer_active (usb_rx)           0.00       2.38 r
+  rx_transfer_active (out)                 0.00       2.38 r
+  data arrival time                                   2.38
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : rx_db
+Version: W-2024.09-SP4
+Date   : Thu May  1 07:04:47 2025
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+Number of ports:                          244
+Number of nets:                          3865
+Number of cells:                         3665
+Number of combinational cells:           2464
+Number of sequential cells:               594
+Number of macros/black boxes:               0
+Number of buf/inv:                        367
+Number of references:                       2
+
+Combinational area:             575010.000000
+Buf/Inv area:                    65592.000000
+Noncombinational area:          940896.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               1515906.000000
+Total area:                 undefined
+1
+Loading db file '/home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : rx_db
+Version: W-2024.09-SP4
+Date   : Thu May  1 07:04:47 2025
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /home/ecegrid/a/ece337/summer24-refactor/tech/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+rx_db                                    70.929   94.544  479.841  165.474 100.0
+  db (data_buffer)                       68.460   88.384  433.890  156.844  94.8
+    add_75 (data_buffer_DW01_inc_2_DW01_inc_8)
+                                       3.20e-03 7.76e-03    1.541 1.10e-02   0.0
+  rx (usb_rx)                             2.471    6.160   45.954    8.630   5.2
+    timer (rx_timer)                      1.028    1.872   13.328    2.900   1.8
+      count (flex_counter_rx)             0.000    0.512    6.154    0.512   0.3
+      pd (bit_pd_counter_rx)              0.341    1.265    7.112    1.606   1.0
+    rcu (rx_cu)                           0.689    1.821   18.924    2.511   1.5
+    bit_shift (flex_sr_rx_MSB_FIRST0)     0.000    0.819    6.149    0.819   0.5
+    nrzi (decoder)                        0.285    0.739    3.103    1.023   0.6
+1
